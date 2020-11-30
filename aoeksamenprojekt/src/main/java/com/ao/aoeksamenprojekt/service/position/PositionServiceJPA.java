@@ -4,6 +4,7 @@ import com.ao.aoeksamenprojekt.model.Position;
 import com.ao.aoeksamenprojekt.repositories.PositionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -16,8 +17,8 @@ public class PositionServiceJPA implements PositionService {
     }
 
     @Override
-    public Set<Position> findAll() {
-        Set<Position> list = new HashSet<>();
+    public ArrayList<Position> findAll() {
+        ArrayList<Position> list = new ArrayList<>();
         positionRepository.findAll().forEach(list::add); // Henter findall, som er i Set, den tager den set og kører loop igennem dem, så hver gang den kører loop, sætter den ind i den nye set vi har lavet.
         return list;
     }
