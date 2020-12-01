@@ -65,7 +65,7 @@ header{
 }
 
 
--nav{
+.nav{
     height: 7.2rem;
     display: flex;
     align-items: center;
@@ -167,5 +167,4 @@ header{
     background-size: cover;
     display: flex;
     align-items: center;
-
 }
