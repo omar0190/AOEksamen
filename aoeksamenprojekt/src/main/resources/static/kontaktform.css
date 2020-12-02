@@ -334,6 +334,9 @@ textarea.input {
         padding: 1.5rem 0 0 0;
     }
 }
+::placeholder{
+    color: #fafafa;
+}
 
 @media (max-width: 480px) {
     .container {
