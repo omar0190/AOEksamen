@@ -28,6 +28,10 @@ html{
     /*når man trykker en knap i footer for at komme op til starten, så scroller den langsomt*/
 }
 
+body{
+    background-color: green;
+}
+
 section{
     padding: 3.9rem 0;
 }
@@ -65,7 +69,7 @@ header{
 }
 
 
--nav{
+.nav{
     height: 7.2rem;
     display: flex;
     align-items: center;
@@ -167,5 +171,4 @@ header{
     background-size: cover;
     display: flex;
     align-items: center;
-
 }

@@ -19,7 +19,7 @@
     <h1>Stillinger</h1>
     <div th:each="position:${stillinger}">
 <h3 th:text="${position.title}"></h3>
-
+        <p th:text="${position.description}"></p>
         <a th:href="@{'/details' + ${position.ID}}" class="btn btn-danger">Læs mere</a>
 
 
