@@ -11,50 +11,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <!--    <link th:href="@{styles.css}" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
 
 <header>
 
-<div class="container">
-    <nav class="nav">
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
-        </div>
-        <a href="index.html" class="logo"><img src="img/logo-rosa.png" alt=""></a>
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Reservations</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">News</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Shop</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Contact</a>
-            </li>
+    <div class="container">
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="index.html" class="logo"><img src="img/logo-rosa.png" alt=""></a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
 
-        </ul>
-    </nav>
-</div>
+            </ul>
+        </nav>
+    </div>
 
 
 </header>
@@ -62,7 +60,7 @@
 
 <section class="hero" id="hero">
     <div class="container">
-        <h2 class="sub headline">
+        <h2 class="sub-headline">
             <span class="first-letter">W</span>elcome
         </h2>
         <h1 class="headline">EasyJob</h1>
@@ -74,14 +72,190 @@
             </div>
             <div class="single-animation">
                 <h5>Ready to be opened</h5>
-                <a href="#" class="btn cta-btn"></a>
+                <a href="#" class="btn cta-btn">Explore</a>
             </div>
         </div>
     </div>
 </section>
 <!--hero ends-->
 
+<section class="discover-our-story">
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="global-headline">
+                    <h2 class="sub-headline">
+                        <span class="first-letter">D</span>iscover
+                    </h2>
+                    <h1 class="headline headline-dark">Our Story</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
 
+                </div>
+                <p>
+                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og
+                    orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne
+                    dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                </p>
+                <a href="#" class="btn body-btn">About us</a>
+            </div>
+            <div class="restaurant-info-img animate-right">
+                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/our-story-1.jpg?raw=true"
+                     alt="story">
+            </div>
+        </div>
+    </div>
+</section>
+<!--Discover our story ends here-->
+
+<section class="tasteful-recipes between">
+    <div class="container">
+        <div class="global-headline">
+            <div class="animate-top">
+                <h2 class="sub-headline">
+                    <span class="first-letter">T</span>asteful
+                </h2>
+            </div>
+            <div class="animate-bottom">
+                <h1 class="headline headline">Recipes</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Tasteful recipes ends-->
+
+<section class="discover-our-menu">
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="image-group padding-right animate-left">
+                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-1.jpg?raw=true"
+                     alt="">
+                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-2.jpg?raw=true"
+                     alt="">
+                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-3.jpg?raw=true"
+                     alt="">
+                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-4.jpg?raw=true"
+                     alt="">
+            </div>
+            <div class="restaurant-description animate-right">
+                <div class="global-headline">
+                    <h2 class="sub-headline">
+                        <span class="first-letter">D</span>iscover
+                    </h2>
+                    <h1 class="headline headline-dark">Menu</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                </div>
+                <p>
+                    “Vi har samarbejdet med Easyjob i en længere periode, og vi har været tilfreds med de
+                    chaufførmedhjælpere som Easyjob har leveret. De er meget pligtopfyldende og de kender vores behov.
+                    De løser hurtig deres opgaver og finder altid kvalitets medarbejder til os. Vi har været tilfreds
+                    med både prisen og samarbejdet. Vi vil helt klart anbefale Easyjob til andre virksomheder.”
+                </p>
+                <a href="#" class="btn body-btn">View the full menu</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Discover our menu ends-->
+
+
+<section class="perfect-blend between">
+    <div class="container">
+        <div class="global-headline">
+            <div class="animate-top">
+                <h2 class="sub-headline">
+                    <span class="first-letter">T</span>he perfect
+                </h2>
+            </div>
+            <div class="animate-bottom">
+                <h1 class="headline headline">Blend</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--perfect blend ends-->
+
+
+<section class="culinary-delight">
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="global-headline">
+                    <h2 class="sub-headline">
+                        <span class="first-letter">C</span>ulinary
+                    </h2>
+                    <h1 class="headline headline-dark">Delight</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+
+                </div>
+                <p>
+                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og
+                    orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne
+                    dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                </p>
+                <a href="#" class="btn body-btn">Make a reservation</a>
+            </div>
+            <div class="image-group">
+                <img class="animate-top"
+                     src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/delight-group-1.jpg?raw=true"
+                     alt="">
+                <img class="animate-bottom"
+                     src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/delight-group-2.jpg?raw=true"
+                     alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Culinary delight ends-->
+
+<footer>
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-content-about animate-top">
+               <h4>About Rosa</h4>
+                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <p>
+                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                </p>
+            </div>
+            <div class="footer-content-divider animate-bottom">
+                <div class="social-media">
+                    <h4>Follow along</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsletter-container">
+                    <h4>Newsletter</h4>
+                    <form action="" class="newsletter-form">
+                        <input type="text" class="newsletter-input" placeholder="Your email address...">
+                        <button class="newsletter-btn" type="submit">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script rel="script" src="js/main.js"></script>
 
