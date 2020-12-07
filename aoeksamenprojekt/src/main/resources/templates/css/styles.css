@@ -68,6 +68,12 @@ header{
     background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
 }
 
+.logo{
+    font-size: 3.1rem;
+    font-weight: var(--main-font);
+    color: #fff;
+}
+
 
 .nav{
     height: 7.2rem;
@@ -167,7 +173,8 @@ header{
 .hero{
     width: 100%;
     height: 100vh;
-    background: url("https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/hero.jpg?raw=true") center no-repeat;
+    /*background: url("https://www.easyjobvikar.dk/wp-content/uploads/2018/02/vikar.jpg") center no-repeat;*/
+    background: url("https://i.pinimg.com/originals/0d/1b/5c/0d1b5c9a33f8e9cb146385a1c6785e95.jpg") center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -175,8 +182,8 @@ header{
 }
 
 .sub-headline{
-    font-size: 8.5rem;
-    font-family: var(--secondary-font);
+    font-size: 4.5rem;
+    font-family: var(--main-font);
     color: var(--secondary-font-color);
     font-weight: 100;
     line-height: .4;
@@ -184,12 +191,13 @@ header{
     opacity: 0;
     animation: fadeUp .5s forwards;
     animation-delay: .5s;
+    margin-bottom: 1.4rem;
 }
 
 
 .first-letter{
     text-transform: uppercase;
-    font-size: 10.3rem;
+    font-size: 5.3rem;
 }
 
 
@@ -303,6 +311,10 @@ header{
 
 }
 
+.discover-our-story h1{
+    font-size: 3rem;
+}
+
 .global-headline .asterisk{
     color: var(--body-font-color);
     margin: 2.4rem 0;
@@ -364,8 +376,14 @@ header{
 /*Tasteful recipes*/
 
 .tasteful-recipes{
-    background: url("https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/tasteful-recipes.jpg?raw=true") center no-repeat;
+    /*background: url("https://www.axiomsource.net/application/files/3615/3664/0677/recruitment-tech.jpg") center no-repeat;*/
+    background-color: var(--main-font-color-dark);
     background-size: cover;
+    color: white;
+}
+
+.tasteful-recipes .asterisk{
+    color: white;
 }
 
 .between{
@@ -390,7 +408,8 @@ header{
 /*The perfect blend*/
 
 .perfect-blend{
-    background: url("https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/perfect-blend.jpg?raw=true") center no-repeat;
+    /*background: url("https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/perfect-blend.jpg?raw=true") center no-repeat;*/
+    background-color: var(--main-font-color-dark);
     background-size: cover;
 
 }
@@ -615,6 +634,14 @@ footer{
     .newsletter-btn{
         margin-left: 13.5rem;
     }
+
+    .logo{
+        font-size: 5.1rem;
+        font-weight: var(--main-font);
+        color: #fff;
+    }
+
+
 }
 
 /*Animation*/
