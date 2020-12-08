@@ -1,6 +1,7 @@
 package com.ao.aoeksamenprojekt.controller;
 
 
+import com.ao.aoeksamenprojekt.model.Employee;
 import com.ao.aoeksamenprojekt.model.Position;
 import com.ao.aoeksamenprojekt.service.position.PositionServiceJPA;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ public class HomeController {
     public String index() {
        return "index";
     }
+
 
 
 
