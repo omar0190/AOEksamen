@@ -15,8 +15,8 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!--    <link th:href="@{styles.css}" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="css/styles.css">
+        <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
 
 </head>
 <body>
@@ -29,7 +29,7 @@
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <a href="index.html" class="logo">Easy<b>Job</b></a>
+            <a href="index.html" class="logo"><img src="img/Easyjob-logo.png" alt="logo"></a>
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="#" class="nav-link active">Home</a>
@@ -41,13 +41,13 @@
                     <a href="#" class="nav-link">Book en tid</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Ledige Stillinger</a>
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Om Os</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Kontakt</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Login</a>
@@ -62,21 +62,27 @@
 <!--Header ends-->
 
 <section class="hero" id="hero">
-    <div class="container">
-        <h2 class="sub-headline">
-            <span class="first-letter">V</span>elkommen
-        </h2>
-        <h1 class="headline">EasyJob</h1>
-        <div class="headline-description">
-            <div class="separation">
-                <div class="line line-left"></div>
-                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
-                <div class="line line-right"></div>
+    <div class="container ">
+
+        <div class="trans">
+
+            <h2 class="sub-headline">
+                Velkommen
+            </h2>
+            <h1 class="headline">EasyJob</h1>
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+                <div class="single-animation">
+                    <h5>PROFESSIONEL VIKARBUREAU & REKRUTTERING</h5>
+                    <a href="#" class="btn cta-btn">Udforsk din muligheder</a>
+                </div>
+
             </div>
-            <div class="single-animation">
-                <h5>PROFESSIONEL VIKARBUREAU & REKRUTTERING</h5>
-                <a href="#" class="btn cta-btn">Udforsk din muligheder</a>
-            </div>
+
         </div>
     </div>
 </section>
@@ -88,9 +94,9 @@
             <div class="restaurant-description padding-right animate-left">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">V</span>i tilbyder
+                        Vi
                     </h2>
-                    <h1 class="headline headline-dark">kvalitets Vikarassistance</h1>
+                    <h1 class="headline headline-dark">tilbyder kvalitets Vikarassistance</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
 
                 </div>
@@ -128,26 +134,29 @@
 <!--</section>-->
 <section class="tasteful-recipes between">
     <div class="container">
-        <div class="restaurant-info">
+        <div class="trans">
+            <div class="restaurant-info">
 
-            <div class="restaurant-description animate-top">
-                <div class="global-headline">
-                    <h2 class="sub-headline">
-                        <span class="first-letter">V</span>ores
-                    </h2>
-                    <h1 class="headline">Rekruttering</h1>
-                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <div class="restaurant-description animate-top">
+                    <div class="global-headline">
+                        <h2 class="sub-headline">
+                            Vores
+                        </h2>
+                        <h1 class="headline">Rekruttering</h1>
+                        <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    </div>
+                    <p>
+                        Søger du den helt rigtige person til en stilling hos dig?
+
+                        Så kan du med fordel lade Easyjob klare rekrutteringsdelen.
+                        Som et af vores hovedområder, tilbyder vi nemlig dig en helt unik mulighed for at finde den helt rette kandidat,
+                        mens vi sørger for alt det praktiske.
+                    </p>
+                    <a href="#" class="btn body-btn">læs mere</a>
                 </div>
-                <p>
-                    Søger du den helt rigtige person til en stilling hos dig?
-
-                    Så kan du med fordel lade Easyjob klare rekrutteringsdelen.
-                    Som et af vores hovedområder, tilbyder vi nemlig dig en helt unik mulighed for at finde den helt rette kandidat,
-                    mens vi sørger for alt det praktiske.
-                </p>
-                <a href="#" class="btn body-btn">læs mere</a>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -165,7 +174,7 @@
             <div class="restaurant-description animate-right">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">L</span>edige
+                        Ledige
                     </h2>
                     <h1 class="headline headline-dark">stillinger</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
@@ -176,7 +185,7 @@
 
                     Hos os bliver du ikke bare et nummer i rækken. Hos os er mennesket i centrum og alt foregår på et personligt niveau.
                 </p>
-                <a href="#" class="btn body-btn">se stillinger</a>
+                <a href="/stillinger" class="btn body-btn">se stillinger</a>
             </div>
         </div>
     </div>
@@ -200,28 +209,31 @@
 <!--    </div>-->
 <!--</section>-->
 
-<section class="tasteful-recipes between">
+<section class="perfect-blend between">
     <div class="container">
-        <div class="restaurant-info">
+        <div class="trans">
+            <div class="restaurant-info">
 
-            <div class="restaurant-description animate-top">
-                <div class="global-headline">
-                    <h2 class="sub-headline">
-                        <span class="first-letter">P</span>røv vores
-                    </h2>
-                    <h1 class="headline">try & hire</h1>
-                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <div class="restaurant-description animate-top">
+                    <div class="global-headline">
+                        <h2 class="sub-headline">
+                            Prøv vores
+                        </h2>
+                        <h1 class="headline">try & hire</h1>
+                        <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    </div>
+                    <p>
+                        Mangler du den helt rette medarbejder til dit team?
+
+                        Easyjob giver dig muligheden for at finde den helt rigtige kandidat.
+                        Med vores Try & Hire-service får du nemlig chancen for at prøve en medarbejderkandidat af,
+                        før du vælger, om du vil fastansætte vedkommende eller ej.
+                    </p>
+                    <a href="#" class="btn body-btn">læs mere</a>
                 </div>
-                <p>
-                    Mangler du den helt rette medarbejder til dit team?
-
-                    Easyjob giver dig muligheden for at finde den helt rigtige kandidat.
-                    Med vores Try & Hire-service får du nemlig chancen for at prøve en medarbejderkandidat af,
-                    før du vælger, om du vil fastansætte vedkommende eller ej.
-                </p>
-                <a href="#" class="btn body-btn">læs mere</a>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -235,7 +247,7 @@
             <div class="restaurant-description padding-right animate-left">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">U</span>dforsk
+                        Udforsk
                     </h2>
                     <h1 class="headline headline-dark">Vores historie</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
@@ -310,7 +322,9 @@
     </div>
 </footer>
 
-<script rel="script" src="js/main.js"></script>
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
+
 
 
 </body>

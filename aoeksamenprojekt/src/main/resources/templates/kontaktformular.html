@@ -1,41 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontaktformular</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+<!--        <link th:href="@{styles.css}" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="css/styles.css">-->
+
+    <link th:href="@{kontaktform.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/kontaktform.css">
+
+
+
     <script
             src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"
     ></script>
-        <link th:href="@{kontaktform.css}" rel="stylesheet"/>
+
 
 
 </head>
 <body>
-<div class="container">
+
+<header th:replace="fragments/header :: h">
+
+</header>
+
+<div class="container" >
     <span class="big-circle"></span>
     <img src="img/shape.png" class="square" alt="" />
     <div class="form">
         <div class="contact-info">
             <h3 class="title">Lad os komme i kontakt</h3>
             <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                dolorum adipisci recusandae praesentium dicta!
+                KONTAKT OS ALLEREDE I DAG FOR MEGET MERE INFORMATION OM DE SERVICES, VI TILBYDER HOS EASYJOB.
             </p>
 
             <div class="info">
                 <div class="information">
                     <img src="img/location.png" class="icon" alt="" />
-                    <p>Indsæt adresse her</p>
+                    <p>Produktionsvej 1
+                        </p>
+                    <p>
+                        2600 Glostrup
+                    </p>
                 </div>
                 <div class="information">
                     <img src="img/email.png" class="icon" alt="" />
-                    <p>Indsæt@Mail.her</p>
+                    <p>info@easyjobvikar.dk</p>
                 </div>
                 <div class="information">
                     <img src="img/phone.png" class="icon" alt="" />
-                    <p>12345678</p>
+                    <p>71 74 75 70</p>
                 </div>
             </div>
 
@@ -87,6 +112,8 @@
 </div>
 
 <script src="app.js"></script>
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+
 </body>
 </html>
 

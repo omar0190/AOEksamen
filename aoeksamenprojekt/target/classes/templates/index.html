@@ -15,8 +15,8 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!--    <link th:href="@{styles.css}" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="css/styles.css">
+        <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
 
 </head>
 <body>
@@ -29,25 +29,28 @@
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <a href="index.html" class="logo"><img src="img/logo-rosa.png" alt=""></a>
+            <a href="index.html" class="logo"><img src="img/easyjob-logo.png" alt="logo"></a>
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="#" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Menu</a>
+                    <a href="#" class="nav-link">Virksomhed</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Reservations</a>
+                    <a href="#" class="nav-link">Book en tid</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">News</a>
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link">Om Os</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
                 </li>
 
             </ul>
@@ -59,21 +62,27 @@
 <!--Header ends-->
 
 <section class="hero" id="hero">
-    <div class="container">
-        <h2 class="sub-headline">
-            <span class="first-letter">W</span>elcome
-        </h2>
-        <h1 class="headline">EasyJob</h1>
-        <div class="headline-description">
-            <div class="separation">
-                <div class="line line-left"></div>
-                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
-                <div class="line line-right"></div>
+    <div class="container ">
+
+        <div class="trans">
+
+            <h2 class="sub-headline">
+                Velkommen
+            </h2>
+            <h1 class="headline">EasyJob</h1>
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+                <div class="single-animation">
+                    <h5>PROFESSIONEL VIKARBUREAU & REKRUTTERING</h5>
+                    <a href="#" class="btn cta-btn">Udforsk din muligheder</a>
+                </div>
+
             </div>
-            <div class="single-animation">
-                <h5>Ready to be opened</h5>
-                <a href="#" class="btn cta-btn">Explore</a>
-            </div>
+
         </div>
     </div>
 </section>
@@ -85,21 +94,23 @@
             <div class="restaurant-description padding-right animate-left">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">D</span>iscover
+                        Vi tilbyder
                     </h2>
-                    <h1 class="headline headline-dark">Our Story</h1>
+                    <h1 class="headline headline-dark">kvalitets Vikarassistance</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
 
                 </div>
                 <p>
-                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og
-                    orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne
-                    dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                    Står du i en spidsbelastet periode, hvor du mangler en vikar?
+
+                    Så kan du trygt benytte dig af Easyjobs vikarassistance.
+                    Vi tilbyder dygtige og kompetente vikarer.
+                    Det er en fleksibel løsning, der kan hjælpe dig, når du har allermest brug for det.
                 </p>
-                <a href="#" class="btn body-btn">About us</a>
+                <a href="#" class="btn body-btn">Læs mere</a>
             </div>
             <div class="restaurant-info-img animate-right">
-                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/our-story-1.jpg?raw=true"
+                <img src="img/Historie.jpg"
                      alt="story">
             </div>
         </div>
@@ -107,16 +118,40 @@
 </section>
 <!--Discover our story ends here-->
 
+<!--<section class="tasteful-recipes between">-->
+<!--    <div class="container">-->
+<!--        <div class="global-headline">-->
+<!--            <div class="animate-top">-->
+<!--                <h2 class="sub-headline">-->
+<!--                    <span class="first-letter">G</span>ode-->
+<!--                </h2>-->
+<!--            </div>-->
+<!--            <div class="animate-bottom">-->
+<!--                <h1 class="headline headline">Rekrutterings muligheder</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <section class="tasteful-recipes between">
     <div class="container">
-        <div class="global-headline">
-            <div class="animate-top">
-                <h2 class="sub-headline">
-                    <span class="first-letter">T</span>asteful
-                </h2>
-            </div>
-            <div class="animate-bottom">
-                <h1 class="headline headline">Recipes</h1>
+        <div class="restaurant-info">
+
+            <div class="restaurant-description animate-top">
+                <div class="global-headline">
+                    <h2 class="sub-headline">
+                       Vores
+                    </h2>
+                    <h1 class="headline">Rekruttering</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                </div>
+                <p>
+                    Søger du den helt rigtige person til en stilling hos dig?
+
+                    Så kan du med fordel lade Easyjob klare rekrutteringsdelen.
+                    Som et af vores hovedområder, tilbyder vi nemlig dig en helt unik mulighed for at finde den helt rette kandidat,
+                    mens vi sørger for alt det praktiske.
+                </p>
+                <a href="#" class="btn body-btn">læs mere</a>
             </div>
         </div>
     </div>
@@ -128,30 +163,26 @@
     <div class="container">
         <div class="restaurant-info">
             <div class="image-group padding-right animate-left">
-                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-1.jpg?raw=true"
-                     alt="">
-                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-2.jpg?raw=true"
-                     alt="">
-                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-3.jpg?raw=true"
-                     alt="">
-                <img src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/menu-group-4.jpg?raw=true"
-                     alt="">
+                <img src="img/cleaning1.jpg" alt="">
+                <img src="img/warehouse1.jpg" alt="">
+                <img src="img/construction-worker.png" alt="">
+                <img src="img/garden.jpg" alt="">
             </div>
             <div class="restaurant-description animate-right">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">D</span>iscover
+                        Ledige
                     </h2>
-                    <h1 class="headline headline-dark">Menu</h1>
+                    <h1 class="headline headline-dark">stillinger</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
                 </div>
                 <p>
-                    “Vi har samarbejdet med Easyjob i en længere periode, og vi har været tilfreds med de
-                    chaufførmedhjælpere som Easyjob har leveret. De er meget pligtopfyldende og de kender vores behov.
-                    De løser hurtig deres opgaver og finder altid kvalitets medarbejder til os. Vi har været tilfreds
-                    med både prisen og samarbejdet. Vi vil helt klart anbefale Easyjob til andre virksomheder.”
+                    Har du lyst til nye udfordringer, enten i et vikariat eller fast job?
+                    Vi hos Easyjob hjælper virksomhederne med at besætte deres ledige stillinger, og arbejder med rekruttering på næsten alle niveauer. Det kan være alt fra korte vikariater til stillinger for resten af livet og inden for alle segmenter: Industri, lager, kontor, administration, indkøb og salg.
+
+                    Hos os bliver du ikke bare et nummer i rækken. Hos os er mennesket i centrum og alt foregår på et personligt niveau.
                 </p>
-                <a href="#" class="btn body-btn">View the full menu</a>
+                <a href="/stillinger" class="btn body-btn">se stillinger</a>
             </div>
         </div>
     </div>
@@ -160,16 +191,41 @@
 <!--Discover our menu ends-->
 
 
-<section class="perfect-blend between">
+<!--<section class="perfect-blend between">-->
+<!--    <div class="container">-->
+<!--        <div class="global-headline">-->
+<!--            <div class="animate-top">-->
+<!--                <h2 class="sub-headline">-->
+<!--                    <span class="first-letter">T</span>he perfect-->
+<!--                </h2>-->
+<!--            </div>-->
+<!--            <div class="animate-bottom">-->
+<!--                <h1 class="headline headline">Blend</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section class="tasteful-recipes between">
     <div class="container">
-        <div class="global-headline">
-            <div class="animate-top">
-                <h2 class="sub-headline">
-                    <span class="first-letter">T</span>he perfect
-                </h2>
-            </div>
-            <div class="animate-bottom">
-                <h1 class="headline headline">Blend</h1>
+        <div class="restaurant-info">
+
+            <div class="restaurant-description animate-top">
+                <div class="global-headline">
+                    <h2 class="sub-headline">
+                        Prøv vores
+                    </h2>
+                    <h1 class="headline">try & hire</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                </div>
+                <p>
+                    Mangler du den helt rette medarbejder til dit team?
+
+                    Easyjob giver dig muligheden for at finde den helt rigtige kandidat.
+                    Med vores Try & Hire-service får du nemlig chancen for at prøve en medarbejderkandidat af,
+                    før du vælger, om du vil fastansætte vedkommende eller ej.
+                </p>
+                <a href="#" class="btn body-btn">læs mere</a>
             </div>
         </div>
     </div>
@@ -185,25 +241,26 @@
             <div class="restaurant-description padding-right animate-left">
                 <div class="global-headline">
                     <h2 class="sub-headline">
-                        <span class="first-letter">C</span>ulinary
+                        Udforsk
                     </h2>
-                    <h1 class="headline headline-dark">Delight</h1>
+                    <h1 class="headline headline-dark">Vores historie</h1>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
 
                 </div>
                 <p>
-                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og
-                    orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne
-                    dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                    Vi er tre unge mennesker, der sammen startede EasyJob i 2016.
+                    Vores engagement for at starte virksomheden kommer af, at vi selv
+                    har flere års erfaring indenfor vikarbranchen. Vi har en bred erfaring
+                    fra flere vikarbureauer og derigennem kom incitamentet til at starte vores eget vikarbureau.
                 </p>
-                <a href="#" class="btn body-btn">Make a reservation</a>
+                <a href="#" class="btn body-btn">Om os</a>
             </div>
             <div class="image-group">
-                <img class="animate-top"
-                     src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/delight-group-1.jpg?raw=true"
+                <img width="200px"
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScFoRPy3VV-blFtoz5_aSH3EqGih1K2VHx9A&usqp=CAU"
                      alt="">
-                <img class="animate-bottom"
-                     src="https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/delight-group-2.jpg?raw=true"
+                <img width="200px"
+                     src="https://c1.wallpaperflare.com/preview/120/295/591/teamwork-team-fist-bump-collaborate.jpg"
                      alt="">
             </div>
         </div>
@@ -219,21 +276,23 @@
         </div>
         <div class="footer-content">
             <div class="footer-content-about animate-top">
-               <h4>About Rosa</h4>
+                <h4>Om EasyJob</h4>
                 <div class="asterisk"><i class="fas fa-asterisk"></i></div>
                 <p>
-                    Når vi samarbejder med Easyjob, så er de altid 100% på opgaven. Vi har følt os godt forstået og orienteret ifm. rekrutteringen af lagerfolk og rengøringspersonale. Det tætte samarbejde og den åbne dialog gør, at jeg kun kan anbefale Easyjob til andre.
+                    Easyjob arbejder for at skabe det perfekte match mellem vores vikarer og kunder.
+                    Vi anser det for vores vigtigste spidskompetence at finde og levere den arbejdskraft,
+                    der 100 % afspejler kundens ønsker.
                 </p>
             </div>
             <div class="footer-content-divider animate-bottom">
                 <div class="social-media">
-                    <h4>Follow along</h4>
+                    <h4>Følg os på</h4>
                     <ul class="social-icons">
                         <li>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://www.facebook.com/EasyjobRekruttering/" target="_blank"><i class="fab fa-facebook-square"></i></a>
                         </li>
                         <li>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -244,9 +303,9 @@
                     </ul>
                 </div>
                 <div class="newsletter-container">
-                    <h4>Newsletter</h4>
+                    <h4>Bliv kontaktet</h4>
                     <form action="" class="newsletter-form">
-                        <input type="text" class="newsletter-input" placeholder="Your email address...">
+                        <input type="text" class="newsletter-input" placeholder="Email...">
                         <button class="newsletter-btn" type="submit">
                             <i class="fas fa-envelope"></i>
                         </button>
@@ -257,7 +316,9 @@
     </div>
 </footer>
 
-<script rel="script" src="js/main.js"></script>
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
+
 
 
 </body>
