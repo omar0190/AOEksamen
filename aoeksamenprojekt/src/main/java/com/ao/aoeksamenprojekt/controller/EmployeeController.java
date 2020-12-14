@@ -24,8 +24,8 @@ public class EmployeeController {
 
         System.out.println(employee1.getEmail());
         System.out.println(employee1.getPhoneNumber());
-        model.addAttribute("ansatte", list);
-        return "ansatte";
+        model.addAttribute("employees", list);
+        return "employees";
     }
         @GetMapping("/empldetails{id}")
     public String showEmployees(@PathVariable("id") int id, Model model){

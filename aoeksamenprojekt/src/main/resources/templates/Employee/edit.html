@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Employee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/background.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<body>
+
+<div class="row justify-content-center"><h1>Vikarændring</h1></div>
+
+
+<div class="row justify-content-center">
+    <form action="/edited" method="post">
+
+
+
+        <div class="form-group">
+            <label for="name">Navn</label><br/>
+            <input type="text" name="firstName" id="name" th:value="${firstName}" class="form-control" required><br/>
+        </div>
+
+        <div class="form-group">
+            <label for="last">Efternavn</label><br/>
+            <input type="text" name="lastName" id="last" th:value="${lastName}" class="form-control" required><br/>
+        </div>
+
+        <div class="form-group">
+            <label for="birth">Fødselsdag</label><br/>
+            <input type="text" name="age" id="birth" th:value="${age}" class="form-control" required><br/>
+        </div>
+
+        <div class="form-group">
+            <label for="tlf">Telefon</label><br/>
+            <input type="text" name="phoneNumber" id="tlf" th:value="${phoneNumber}" class="form-control" required><br/>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label><br/>
+            <input type="text" name="email" id="email" th:value="${email}" class="form-control" required><br/>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" name="submit">Update</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>
