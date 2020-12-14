@@ -384,7 +384,8 @@ header{
 
 .tasteful-recipes{
     /*background: url("https://www.axiomsource.net/application/files/3615/3664/0677/recruitment-tech.jpg") center no-repeat;*/
-    background-color: var(--main-font-color-dark);
+    background: url("https://www.easyjobvikar.dk/wp-content/uploads/2018/02/vikar.jpg") center no-repeat;
+    /*background-color: var(--main-font-color-dark);*/
     background-size: cover;
     color: white;
 }
@@ -415,9 +416,10 @@ header{
 /*The perfect blend*/
 
 .perfect-blend{
-    /*background: url("https://github.com/jlop007/the-rosa/blob/master/the-rosa/images/perfect-blend.jpg?raw=true") center no-repeat;*/
-    background-color: var(--main-font-color-dark);
+    background: url("https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/54437162_1283266475155751_4292489834309615616_n.jpg?_nc_cat=106&ccb=2&_nc_sid=730e14&_nc_ohc=_7uJHHx3FxIAX8T8X1o&_nc_ht=scontent-amt2-1.xx&oh=b8bdf995b0e48351a005fb147a0d71a7&oe=5FF330A3") center no-repeat;
+    /*background-color: var(--main-font-color-dark);*/
     background-size: cover;
+    color: white;
 
 }
 

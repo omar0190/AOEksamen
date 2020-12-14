@@ -19,9 +19,9 @@ public class EmployeeController {
     public String ansatte(Model model){
         ArrayList<Employee> list = employeeServiceJPA.findAll();
         Employee employee1 = list.get(0);
-        System.out.println(employee1.getSurName());
+        System.out.println(employee1.getFirstName());
         System.out.println(employee1.getLastName());
-        System.out.println(employee1.getAge());
+
         System.out.println(employee1.getEmail());
         System.out.println(employee1.getPhoneNumber());
         model.addAttribute("ansatte", list);
@@ -31,9 +31,8 @@ public class EmployeeController {
     public String showEmployees(@PathVariable("id") int id, Model model){
             Optional<Employee> employee1 = employeeServiceJPA.findByID(id);
             if (employee1.isPresent()){
-                model.addAttribute("surName", employee1.get().getSurName());
+                model.addAttribute("surName", employee1.get().getFirstName());
                 model.addAttribute("lastName", employee1.get().getLastName());
-                model.addAttribute("age", employee1.get().getAge());
                 model.addAttribute("email", employee1.get().getEmail());
                 model.addAttribute("phoneNumber", employee1.get().getPhoneNumber());
             }

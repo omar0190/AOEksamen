@@ -1,5 +1,7 @@
 package com.ao.aoeksamenprojekt.model;
 
+
+
 import javax.persistence.*;
 
 @Table(name = "Employee")
@@ -8,11 +10,11 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
-    private String surName;
+    private String firstName;
     private String lastName;
-    private int phoneNumber;
-    private int age;
     private String email;
+    private int phoneNumber;
+
 
     public int getID() {
         return ID;
@@ -22,12 +24,12 @@ public class Employee {
         this.ID = ID;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -46,13 +48,6 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getEmail() {
         return email;
@@ -66,10 +61,9 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "ID=" + ID +
-                ", surName='" + surName + '\'' +
+                ", surName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber=" + phoneNumber +
-                ", age=" + age +
                 ", email='" + email + '\'' +
                 '}';
     }

@@ -3,11 +3,21 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Motorhome Nordic</title>
+    <title>Login - EasyJob</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="css/login.css" rel="stylesheet"/>
-    <link th:href="@{style.css}" rel="stylesheet"/>
+
+
+<!--    CSS-->
+    <link href="../static/login.css" rel="stylesheet"/>
+    <link th:href="@{login.css}" rel="stylesheet"/>
+
+
+<!--    JavaScript-->
+    <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
+    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -22,7 +32,7 @@
 </header>
 
 <div>
-    <div class="sign-up-form">
+    <div id="p" class="sign-up-form">
         <h1>Login</h1>
         <form  th:action="@{/login}" method="post">
             <div th:if="${param.error}">
@@ -35,6 +45,13 @@
 
             <input class="input-box" type="text" id="username" name="username" placeholder="Username" autofocus="autofocus">
             <input class="input-box" type="password" id="password" name="password" placeholder="Password" autofocus="autofocus">
+            <div>
+                <form id="Sign">
+                    <div>
+                        <a href="/signup">Sign up</a>
+                    </div>
+                </form>
+            </div>
             <button type="submit" class="sign-btn">Log in</button>
 
         </form>
@@ -51,6 +68,12 @@
     </div>
 
 </footer>
+
+<script>
+    isJqueryWorking();
+
+</script>
+
 
 </body>
 </html>
