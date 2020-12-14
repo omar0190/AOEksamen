@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Alle Stillinger</title>
+
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!--    jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!--    JS-->
+    <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
+    <!--    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>-->
+
+    <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+    <script type="text/javascript" rel="script" src="../static/main.js"></script>
+
+
+<!--    Css-->
+
+<!--    <link th:href="@{styles.css}" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="../static/styles.css">-->
+
+</head>
+<body>
+
+<header>
+
+
+
+</header>
+
+
+<main>
+
+    <div class="container">
+
+        <table class="table table-striped">
+
+            <thead class="thead-dark">
+
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+            <tr th:each="stilling : ${list}">
+                <th th:text="${stilling.ID}"></th>
+                <td th:text="${stilling.title}"></td>
+                <td>
+                    <a th:href="@{'/redigererstillinger' + ${stilling.ID}}" class="btn btn-success">Rediger</a>
+                </td>
+                <td><a th:href="@{'/sletstillinger' + ${stilling.ID}}" class="btn btn-danger">Slet</a>
+                </td>
+                <!--                <form id="slet">-->
+
+
+                <!--                    <td>-->
+                <!--                        <input type="text" id="title" th:value="${stilling.title}" class="form-control">-->
+                <!--                    </td>-->
+
+                <!--                    <td>-->
+                <!--                        <input type="number" id="ID" th:value="${stilling.ID}">-->
+
+                <!--                        <button type="submit" onclick="preventdelete($('#slet'))" class="btn btn-danger">Slet</button>-->
+                <!--                    </td>-->
+
+                <!--                </form>-->
+            </tr>
+
+            </tbody>
+
+
+        </table>
+
+        <div>
+            <a href="/opretstilling" class="btn btn-primary">Opret en ny stilling</a>
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+<script>
+    // isjQuery();
+    // preventdelete($("#slet"));
+</script>
+
+</body>
+</html>

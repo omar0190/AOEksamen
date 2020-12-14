@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret Stilling</title>
+
+
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+
+<header>
+
+</header>
+
+<main class="container">
+
+    <div class="row justify-content-center"><h1>Opret stilling</h1></div>
+
+    <div class="row justify-content-center">
+
+        <form action="/stillingCreated" method="post">
+
+
+            <div class="form-group">
+                <label for="title"><b>Title:</b></label>
+                <input type="text" id="title" name="title" placeholder="Elektriker 12 timer..." class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="description"><b>Beskrivelse:</b></label>
+                <textarea id="description" name="description" placeholder="Din beskrivelse...." class="form-control" cols="50" rows="10" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Opret Stilling</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+</footer>
+</body>
+</html>

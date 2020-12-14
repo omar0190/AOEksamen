@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Redigerer Stilling</title>
+
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<header>
+
+</header>
+
+<main>
+    <div class="row justify-content-center"><h1>Redigerer stilling</h1></div>
+
+    <div class="row justify-content-center">
+
+
+        <form action="/edited" method="post">
+
+
+            <div form-group>
+                <input type="hidden" id="id" name="ID" th:value="${id}" class="form-control" required>
+            </div>
+            <br>
+
+            <div form-group>
+                <label for="title"><b>Title:</b></label>
+                <input type="text" id="title" name="title" th:value="${title}" class="form-control" required>
+            </div>
+
+            <br>
+
+            <div form-group>
+                <label for="description"><b>Description:</b></label>
+                <!--            <input type="" id="description" name="description" th:value="${des}" class="form-control" required>-->
+                <textarea name="description" id="description" th:text="${des}" required class="form-control" cols="50"
+                          rows="10"></textarea>
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Redigerer</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+
+</footer>
+</body>
+</html>

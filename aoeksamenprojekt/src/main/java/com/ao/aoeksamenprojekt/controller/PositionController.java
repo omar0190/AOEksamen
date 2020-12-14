@@ -5,11 +5,12 @@ import com.ao.aoeksamenprojekt.service.position.PositionServiceJPA;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Set;
 
 @Controller
 public class PositionController {
@@ -37,6 +38,80 @@ public class PositionController {
         }
 
         return "stillingsbeskrivelse";
+    }
+
+
+    @GetMapping("/opretstilling")
+    public String create(){
+
+        return "Stillinger/opretStilling";
+    }
+
+
+    @PostMapping("stillingCreated")
+    public String created (@ModelAttribute Position position){
+
+
+        positionServiceJPA.save(position);
+
+        System.out.println("oprettet stilling");
+
+        return "redirect:/allestillinger";
+    }
+
+
+    @GetMapping("/allestillinger")
+    public String get(Model model){
+
+        ArrayList<Position> list = positionServiceJPA.findAll();
+
+        if(list != null){
+            System.out.println("liste hentet");
+        }
+        model.addAttribute("list", list);
+
+        return ("Stillinger/AllStilling");
+    }
+
+
+    @GetMapping("/redigererstillinger{id}")
+    public String edit(@PathVariable ("id") int id, Model model){
+
+        Optional<Position> position = positionServiceJPA.findByID(id);
+
+        if(position.isPresent()){
+            model.addAttribute("id", position.get().getID());
+            model.addAttribute("title", position.get().getTitle());
+            model.addAttribute("des", position.get().getDescription());
+        }
+
+        return "Stillinger/edit";
+    }
+
+
+    @PostMapping("/edited")
+    public String edit(@ModelAttribute Position position){
+
+        if (position != null){
+            positionServiceJPA.save(position);
+            System.out.println("edited");
+        }
+        else {
+        System.out.println("Not edited");
+        }
+
+
+        return "redirect:/allestillinger";
+    }
+
+
+    @GetMapping("/sletstillinger{id}")
+    public String delete(@PathVariable("id") int id){
+
+        positionServiceJPA.deleteByID(id);
+        System.out.println("deleted");
+
+        return "redirect:/allestillinger";
     }
 
 }
