@@ -5,7 +5,9 @@ import com.ao.aoeksamenprojekt.service.position.EmployeeServiceJPA;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -14,29 +16,83 @@ import java.util.Optional;
 public class EmployeeController {
     EmployeeServiceJPA employeeServiceJPA;
 
-    public EmployeeController(EmployeeServiceJPA employeeServiceJPA) {this.employeeServiceJPA = employeeServiceJPA;}
-    @GetMapping("/ansatte")
-    public String ansatte(Model model){
-        ArrayList<Employee> list = employeeServiceJPA.findAll();
-        Employee employee1 = list.get(0);
-        System.out.println(employee1.getFirstName());
-        System.out.println(employee1.getLastName());
-
-        System.out.println(employee1.getEmail());
-        System.out.println(employee1.getPhoneNumber());
-        model.addAttribute("employees", list);
-        return "employees";
+    public EmployeeController(EmployeeServiceJPA employeeServiceJPA) {
+        this.employeeServiceJPA = employeeServiceJPA;
     }
-        @GetMapping("/empldetails{id}")
-    public String showEmployees(@PathVariable("id") int id, Model model){
-            Optional<Employee> employee1 = employeeServiceJPA.findByID(id);
-            if (employee1.isPresent()){
-                model.addAttribute("surName", employee1.get().getFirstName());
-                model.addAttribute("lastName", employee1.get().getLastName());
-                model.addAttribute("email", employee1.get().getEmail());
-                model.addAttribute("phoneNumber", employee1.get().getPhoneNumber());
-            }
-            return "vikarprofil";
+
+    @GetMapping("/ansatte")
+    public String ansatte(Model model) {
+        ArrayList<Employee> list = employeeServiceJPA.findAll();
+
+        System.out.println(list.get(0).getFirstName());
+
+        model.addAttribute("list", list);
+        return "Employee/employees";
+
+    }
+
+    @GetMapping("/opretvikar")
+    public String create() {
+
+
+        return "Employee/create";
+    }
+
+    @PostMapping("/employeecreated")
+    public String created(Employee employee) {
+
+        employeeServiceJPA.save(employee);
+
+        return "redirect:/ansatte";
+    }
+
+    @GetMapping("/sletemp{id}")
+    public String delete(@PathVariable ("id") int id){
+
+        employeeServiceJPA.deleteByID(id);
+
+        return "redirect:/ansatte";
+    }
+
+
+    @GetMapping("/empldetails{id}")
+    public String showEmployees(@PathVariable("id") int id, Model model) {
+        Optional<Employee> employee1 = employeeServiceJPA.findByID(id);
+        if (employee1.isPresent()) {
+            model.addAttribute("surName", employee1.get().getFirstName());
+            model.addAttribute("lastName", employee1.get().getLastName());
+            model.addAttribute("email", employee1.get().getEmail());
+            model.addAttribute("phoneNumber", employee1.get().getPhoneNumber());
         }
+        return "vikarprofil";
+    }
+
+
+    @GetMapping("/kontaktmedarbejder")
+    public String contact(Model model) {
+
+        ArrayList<Employee> list = employeeServiceJPA.findAll();
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).getFirstName());
+        }
+        model.addAttribute("list", list);
+
+        return "Employee/contact";
+    }
+
+    @GetMapping("/empprofile{id}")
+    public String empprofile(@PathVariable("id") int id, Model model) {
+        Optional<Employee> employee = employeeServiceJPA.findByID(id);
+        if (employee.isPresent()) {
+            model.addAttribute("id", employee.get().getID());
+            model.addAttribute("first", employee.get().getFirstName());
+            model.addAttribute("last", employee.get().getLastName());
+            model.addAttribute("email", employee.get().getEmail());
+            model.addAttribute("phone", employee.get().getPhoneNumber());
+
+        }
+        return "Employee/profile";
+    }
 
 }

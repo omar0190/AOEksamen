@@ -4,8 +4,8 @@ package com.ao.aoeksamenprojekt.model;
 
 import javax.persistence.*;
 
-@Table(name = "Employee")
 @Entity
+@Table(name = "Employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

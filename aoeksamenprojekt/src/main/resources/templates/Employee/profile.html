@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<main class="container">
+
+    <div class="row justify-content-center">
+
+        <div>
+            <h4>ID:</h4>
+            <p th:text="${id}"></p>
+        </div>
+        <div>
+            <h4>First name:</h4>
+            <p th:text="${first}"></p>
+        </div>
+        <div>
+            <h4>Last name:</h4>
+            <p th:text="${last}"></p>
+        </div>
+        <div>
+            <h4>Email:</h4>
+            <p th:text="${email}"></p>
+        </div>
+        <div>
+            <h4>Phone:</h4>
+            <p th:text="${phone}"></p>
+        </div>
+
+
+    </div>
+
+</main>
+
+
+</body>
+</html>

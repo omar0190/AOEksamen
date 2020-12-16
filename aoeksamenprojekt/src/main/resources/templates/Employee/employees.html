@@ -2,40 +2,54 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Create Employee</title>
+    <title>Alle vikar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link th:href="@{background.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="../static/background.css">
+<!--    <link th:href="@{background.css}" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="../static/background.css">-->
 
-<head>
-    <meta charset="UTF-8">
-    <title>Ansatte</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ansatte</title>
+    </head>
 <body>
 
 <div class="container">
     <br/>
-<h1>Liste over ansatte</h1>
+    <h1>Liste over ansatte</h1>
 
-<table>
-<tr>
-    <th>Navn</th>
-    <th>Efternavn</th>
-    <th>Fødselsdag</th>
-    <th>Telefon</th>
-    <th>Email</th>
-</tr>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>Efternavn</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emp : ${list}">
 
-    <tr>
-        <td th:text="${firstName}"></td>
-        <td th:text="${lastName}"></td>
-        <td th:text="${age}"></td>
-        <td th:text="${tlf}"></td>
-        <td th:text="${email}"></td>
-    </tr>
-</table>
+            <td th:text="${emp.ID}"></td>
+            <td th:text="${emp.firstName}"></td>
+            <td th:text="${emp.lastName}"></td>
+            <td th:text="${emp.phoneNumber}"></td>
+            <td th:text="${emp.email}"></td>
+            <td>
+                <a th:href="@{'/sletemp' + ${emp.ID}}" class="btn btn-danger">Slet</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a href="/opretvikar" class="btn btn-primary">Opret en vikar</a>
+    </div>
 </div>
 
 </body>
