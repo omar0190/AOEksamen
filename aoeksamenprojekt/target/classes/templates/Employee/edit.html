@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Create Employee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:href="@{/background.css}" rel="stylesheet">
+<!--    <link th:href="@{/background.css}" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body>
@@ -13,9 +13,11 @@
 
 
 <div class="row justify-content-center">
-    <form action="/edited" method="post">
+    <form action="/editedemp" method="post">
 
-
+        <div class="form-group">
+            <input type="text" name="ID"  th:value="${id}" class="form-control" required><br/>
+        </div>
 
         <div class="form-group">
             <label for="name">Navn</label><br/>
@@ -27,10 +29,6 @@
             <input type="text" name="lastName" id="last" th:value="${lastName}" class="form-control" required><br/>
         </div>
 
-        <div class="form-group">
-            <label for="birth">Fødselsdag</label><br/>
-            <input type="text" name="age" id="birth" th:value="${age}" class="form-control" required><br/>
-        </div>
 
         <div class="form-group">
             <label for="tlf">Telefon</label><br/>

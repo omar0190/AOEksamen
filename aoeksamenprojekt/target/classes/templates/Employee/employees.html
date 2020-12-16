@@ -40,7 +40,10 @@
             <td th:text="${emp.phoneNumber}"></td>
             <td th:text="${emp.email}"></td>
             <td>
+                <a th:href="@{'/empdetails' + ${emp.ID}}" class="btn btn-success">Rediger</a>
+
                 <a th:href="@{'/sletemp' + ${emp.ID}}" class="btn btn-danger">Slet</a>
+
             </td>
 
         </tr>

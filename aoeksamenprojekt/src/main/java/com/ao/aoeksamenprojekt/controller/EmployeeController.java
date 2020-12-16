@@ -55,16 +55,26 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/empldetails{id}")
+    @GetMapping("/empdetails{id}")
     public String showEmployees(@PathVariable("id") int id, Model model) {
         Optional<Employee> employee1 = employeeServiceJPA.findByID(id);
         if (employee1.isPresent()) {
-            model.addAttribute("surName", employee1.get().getFirstName());
+            model.addAttribute("id", employee1.get().getID());
+            model.addAttribute("firstName", employee1.get().getFirstName());
             model.addAttribute("lastName", employee1.get().getLastName());
             model.addAttribute("email", employee1.get().getEmail());
             model.addAttribute("phoneNumber", employee1.get().getPhoneNumber());
         }
-        return "vikarprofil";
+
+        return "Employee/edit";
+    }
+
+    @PostMapping("/editedemp")
+    public String edited(@ModelAttribute Employee employee){
+
+        employeeServiceJPA.save(employee);
+
+        return "redirect:/ansatte";
     }
 
 
