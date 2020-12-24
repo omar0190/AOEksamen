@@ -2,6 +2,7 @@ package com.ao.aoeksamenprojekt.controller;
 
 import com.ao.aoeksamenprojekt.model.Position;
 import com.ao.aoeksamenprojekt.service.position.PositionServiceJPA;
+import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,22 +24,20 @@ public class PositionController {
     @GetMapping("/stillinger")
     public String stillinger(Model model) {
         ArrayList<Position> list = positionServiceJPA.findAll();
-        Position position1 = list.get(0);
-        System.out.println(position1.getTitle());
         model.addAttribute("stillinger", list);
-        return "stillinger";
+        return "Stillinger/stillinger";
     }
 
-    @GetMapping("/details{id}")
-    public String showPositions(@PathVariable("id") int id, Model model) {
-        Optional<Position> position1 = positionServiceJPA.findByID(id); // Optional, gør at man skal hente objektet selv, og hente den med get
-        if (position1.isPresent()) {
-            model.addAttribute("title", position1.get().getTitle());
-            model.addAttribute("description", position1.get().getDescription());
-        }
-
-        return "stillingsbeskrivelse";
-    }
+//    @GetMapping("/details{id}")
+//    public String showPositions(@PathVariable("id") int id, Model model) {
+//        Optional<Position> position1 = positionServiceJPA.findByID(id); // Optional, gør at man skal hente objektet selv, og hente den med get
+//        if (position1.isPresent()) {
+//            model.addAttribute("title", position1.get().getTitle());
+//            model.addAttribute("description", position1.get().getDescription());
+//        }
+//
+//        return "stillingsbeskrivelse";
+//    }
 
 
     @GetMapping("/opretstilling")
@@ -112,6 +111,35 @@ public class PositionController {
         System.out.println("deleted");
 
         return "redirect:/allestillinger";
+    }
+
+    @GetMapping("/stillinginfo{id}")
+    public String details(@PathVariable("id") int id, Model model){
+
+        Optional<Position> position = positionServiceJPA.findByID(id);
+
+        if(position.isPresent()){
+            model.addAttribute("title", position.get().getTitle());
+            model.addAttribute("description", position.get().getDescription());
+        }
+
+
+        return "Stillinger/details";
+    }
+
+
+    @GetMapping("/infostilling{id}")
+    public String info(@PathVariable("id") int id, Model model){
+
+        Optional<Position> position = positionServiceJPA.findByID(id);
+
+        if(position.isPresent()){
+            model.addAttribute("title", position.get().getTitle());
+            model.addAttribute("description", position.get().getDescription());
+        }
+
+
+        return "Stillinger/detailsbruger";
     }
 
 }

@@ -7,46 +7,138 @@
 <!--    <link th:href="@{/background.css}" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <style>
+        label{
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+
+
+
+
 <body>
 
-<div class="row justify-content-center"><h1>Vikarændring</h1></div>
+
+<header>
+
+    <div class="container">
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="index.html" class="logo"><img th:src="@{/img/Easyjob-logo.png}" alt="logo"></a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Virksomhed</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Book en tid</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Om Os</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
 
 
-<div class="row justify-content-center">
-    <form action="/editedemp" method="post">
+</header>
+<!--Header ends-->
 
-        <div class="form-group">
-            <input type="text" name="ID"  th:value="${id}" class="form-control" required><br/>
+
+<section class="hero" style=" width: 100%;
+    height: 100vh; background: url('https://i.pinimg.com/originals/3d/84/a2/3d84a293f6e70b793008c4080d117cbe.jpg') center no-repeat;  background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+" id="hero">
+    <div class="container ">
+
+        <div class="trans">
+
+            <h1 class="headline">Rediger vikar</h1>
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+                <div class="single-animation">
+                    <form action="/editedemp" method="post">
+                        <br>
+
+                        <div class="form-group">
+                            <input type="hidden" name="ID"  th:value="${id}" class="form-control" required><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Navn</label><br/>
+                            <input type="text" name="firstName" id="name" th:value="${firstName}" placeholder="Fornavn" class="form-control" required><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last">Efternavn</label><br/>
+                            <input type="text" name="lastName" id="last" th:value="${lastName}" placeholder="Efternavn" class="form-control" required><br/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="tlf">Telefon</label><br/>
+                            <input type="text" name="phoneNumber" id="tlf" th:value="${phoneNumber}" placeholder="Tlf" class="form-control" required><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label><br/>
+                            <input type="text" name="email" id="email" th:value="${email}" placeholder="Email" class="form-control" required><br/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn cta-btn" name="submit">Gem</button>
+
+                        </div>
+
+                        <div class="form-group">
+                            <a th:href="@{'/sletemp' + ${id}}" class="btn btn-danger">Slet</a>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
         </div>
+    </div>
+</section>
+<!--hero ends-->
 
-        <div class="form-group">
-            <label for="name">Navn</label><br/>
-            <input type="text" name="firstName" id="name" th:value="${firstName}" class="form-control" required><br/>
-        </div>
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
 
-        <div class="form-group">
-            <label for="last">Efternavn</label><br/>
-            <input type="text" name="lastName" id="last" th:value="${lastName}" class="form-control" required><br/>
-        </div>
-
-
-        <div class="form-group">
-            <label for="tlf">Telefon</label><br/>
-            <input type="text" name="phoneNumber" id="tlf" th:value="${phoneNumber}" class="form-control" required><br/>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email</label><br/>
-            <input type="text" name="email" id="email" th:value="${email}" class="form-control" required><br/>
-        </div>
-
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" name="submit">Update</button>
-        </div>
-    </form>
-
-</div>
 
 </body>
 </html>

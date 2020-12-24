@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Alle Stillinger</title>
+    <title>Stillinginfo</title>
 
     <meta name="description" content="Vikar rekruttering">
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -15,39 +15,15 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
-    <!--    jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <!--    fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
-    <!--    JS-->
-    <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
-    <!--    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>-->
-
-    <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
-    <script type="text/javascript" rel="script" src="../static/main.js"></script>
-
-
-    <!--    Css-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <link th:href="@{styles.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/styles.css">
 
-    <style>
-        .hero{
-            width: 100%;
-            height: 100vh; background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;  background-size: cover;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-    </style>
-
 </head>
 <body>
-
 
 
 <header>
@@ -91,65 +67,46 @@
 <!--Header ends-->
 
 
-<section class="hero" style="" id="hero">
+<section class="hero" style=" width: 100%;
+    height: 100vh; background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;  background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+" id="hero">
     <div class="container ">
 
         <div class="trans">
 
-            <h1 class="headline">Stillinger</h1>
-
+            <h1 class="headline">Stilling oplysninger</h1>
             <div class="headline-description">
                 <div class="separation">
                     <div class="line line-left"></div>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
                     <div class="line line-right"></div>
                 </div>
-
-
                 <div class="single-animation">
+                    <h5><b>Title:</b></h5>
+                    <h5 th:text="${title}"></h5>
+                    <h5><b>Beskrivelse:</b></h5>
+                    <h5 th:text="${description}"></h5>
 
-                    <br>
-
-                    <table class="table">
-
-                        <thead class="thead-dark">
-
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col"></th>
-                        </tr>
-
-                        </thead>
-
-                        <tbody>
-                        <tr th:each="stilling : ${stillinger}" style="color: white">
-                            <th th:text="${stilling.ID}"></th>
-                            <td th:text="${stilling.title}"></td>
-                            <td>
-                                <a th:href="@{'/infostilling' + ${stilling.ID}}" class="btn cta-btn">Ansøg</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-
-
+                    <div class="form-group">
+                        <a href="/allestillinger" class="btn cta-btn">Tilbage</a>
+                    </div>
                 </div>
+
+
+
             </div>
+
         </div>
     </div>
 </section>
 <!--hero ends-->
 
+
 <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
 <script type="text/javascript" rel="script" src="../static/main.js"></script>
-
-
-<script>
-    // isjQuery();
-    // preventdelete($("#slet"));
-</script>
 
 </body>
 </html>

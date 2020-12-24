@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Opret Stilling</title>
@@ -14,41 +14,115 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <style>
+        label{
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body>
 
 
 
+
 <header>
 
-</header>
-
-<main class="container">
-
-    <div class="row justify-content-center"><h1>Opret stilling</h1></div>
-
-    <div class="row justify-content-center">
-
-        <form action="/stillingCreated" method="post">
-
-
-            <div class="form-group">
-                <label for="title"><b>Title:</b></label>
-                <input type="text" id="title" name="title" placeholder="Elektriker 12 timer..." class="form-control" required>
+    <div class="container">
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
             </div>
-            <div class="form-group">
-                <label for="description"><b>Beskrivelse:</b></label>
-                <textarea id="description" name="description" placeholder="Din beskrivelse...." class="form-control" cols="50" rows="10" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Opret Stilling</button>
-            </div>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Virksomhed</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Book en tid</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Om Os</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
 
-        </form>
-
+            </ul>
+        </nav>
     </div>
 
-</main>
+
+</header>
+<!--Header ends-->
+
+
+<section class="hero" style=" width: 100%;
+    height: 100vh; background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;  background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+" id="hero">
+    <div class="container ">
+
+        <div class="trans">
+
+            <h1 class="headline">Opret stilling</h1>
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+                <div class="single-animation">
+                    <form action="/stillingCreated" method="post">
+
+
+                        <div class="form-group">
+                            <label for="title"><b>Title:</b></label>
+                            <input type="text" id="title" name="title" placeholder="Elektriker 12 timer..." class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description"><b>Beskrivelse:</b></label>
+                            <textarea id="description" name="description" placeholder="Din beskrivelse...." class="form-control" cols="50" rows="10" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn cta-btn">Opret</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--hero ends-->
+
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
+
 
 
 <footer>

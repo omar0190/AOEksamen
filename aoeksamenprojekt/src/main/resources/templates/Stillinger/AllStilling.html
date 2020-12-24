@@ -19,6 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+<!--    fonts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
     <!--    JS-->
     <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
     <!--    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>-->
@@ -29,76 +32,132 @@
 
 <!--    Css-->
 
-<!--    <link th:href="@{styles.css}" rel="stylesheet"/>-->
-<!--    <link rel="stylesheet" href="../static/styles.css">-->
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <style>
+        .hero{
+            width: 100%;
+            height: 100vh; background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;  background-size: cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
 
 </head>
 <body>
 
+
+
 <header>
 
-
-
-</header>
-
-
-<main>
-
     <div class="container">
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Virksomhed</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Book en tid</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Om Os</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
 
-        <table class="table table-striped">
+            </ul>
 
-            <thead class="thead-dark">
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
 
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Title</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
+        </nav>
 
-            </thead>
-
-            <tbody>
-            <tr th:each="stilling : ${list}">
-                <th th:text="${stilling.ID}"></th>
-                <td th:text="${stilling.title}"></td>
-                <td>
-                    <a th:href="@{'/redigererstillinger' + ${stilling.ID}}" class="btn btn-success">Rediger</a>
-                </td>
-                <td><a th:href="@{'/sletstillinger' + ${stilling.ID}}" class="btn btn-danger">Slet</a>
-                </td>
-                <!--                <form id="slet">-->
-
-
-                <!--                    <td>-->
-                <!--                        <input type="text" id="title" th:value="${stilling.title}" class="form-control">-->
-                <!--                    </td>-->
-
-                <!--                    <td>-->
-                <!--                        <input type="number" id="ID" th:value="${stilling.ID}">-->
-
-                <!--                        <button type="submit" onclick="preventdelete($('#slet'))" class="btn btn-danger">Slet</button>-->
-                <!--                    </td>-->
-
-                <!--                </form>-->
-            </tr>
-
-            </tbody>
-
-
-        </table>
-
-        <div>
-            <a href="/opretstilling" class="btn btn-primary">Opret en ny stilling</a>
-        </div>
 
     </div>
 
-</main>
+
+</header>
+<!--Header ends-->
+
+
+<section class="hero" style="" id="hero">
+    <div class="container ">
+
+        <div class="trans" style="padding-top: 40px">
+
+            <h1 class="headline">Stillinger</h1>
+
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+
+
+                <div class="single-animation">
+
+                    <div>                    <a href="/opretstilling" class="btn cta-btn">Opret en stilling</a>
+                    </div>
+
+                    <br>
+
+                    <table class="table">
+
+                <thead class="thead-dark">
+
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+                <tr th:each="stilling : ${list}" style="color: white">
+                    <th th:text="${stilling.ID}"></th>
+                    <td th:text="${stilling.title}"></td>
+                    <td>
+                        <a th:href="@{'/stillinginfo' + ${stilling.ID}}" class="btn btn-primary">Info</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/redigererstillinger' + ${stilling.ID}}" class="btn btn-success">Rediger</a>
+                    </td>
+<!--                    <td><a th:href="@{'/sletstillinger' + ${stilling.ID}}" class="btn btn-danger">Slet</a>-->
+<!--                    </td>-->
+                </tr>
+                </tbody>
+            </table>
 
 
 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--hero ends-->
+
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
 
 
 <script>
