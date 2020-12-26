@@ -82,26 +82,39 @@
 
         <div class="trans">
 
-            <h1 class="headline">Vikar oplysninger</h1>
+            <h1 class="headline">Tildel stilling</h1>
             <div class="headline-description">
                 <div class="separation">
                     <div class="line line-left"></div>
                     <div class="asterisk"><i class="fas fa-asterisk"></i></div>
                     <div class="line line-right"></div>
                 </div>
+
                 <div class="single-animation">
-                    <h5><b>ID:</b></h5>
-                    <h5 th:text="${id}"></h5>
+
                     <h5><b>Fornavn:</b></h5>
                     <h5 th:text="${first}"></h5>
                     <h5><b>Efternavn:</b></h5>
                     <h5 th:text="${last}"></h5>
-                    <h5><b>Email:</b></h5>
-                    <h5 th:text="${email}"></h5>
-                    <h5><b>Tlf:</b></h5>
-                    <h5 th:text="${phone}"></h5>
-                    <h5><b>Stilling:</b></h5>
+                    <h5><b>Nuværende stilling:</b></h5>
                     <h5 th:text="${stilling}"></h5>
+
+
+
+                    <form action="/tildelt" method="post">
+
+                        <input type="hidden" name="id" th:value="${id}">
+
+                        <h5><b>Ny stilling:</b></h5>
+                        <select name="stilling_id" class="form-control">
+                            <option th:each="stilling : ${stillinger}" th:value="${stilling.ID}" th:text="${stilling.title}"></option>
+                        </select>
+
+                        <button type="submit" class="btn cta-btn">Tildel ny stilling</button>
+
+                    </form>
+
+
                     <a href="/vikar" class="btn cta-btn">Tilbage</a>
                 </div>
 

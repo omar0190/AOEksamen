@@ -11,7 +11,8 @@ public class Position {
     private String title;
     private String description;
 
-
+   @OneToOne(cascade = CascadeType.ALL, mappedBy = "position")
+    private Employee employee;
 
 
     public int getID() {

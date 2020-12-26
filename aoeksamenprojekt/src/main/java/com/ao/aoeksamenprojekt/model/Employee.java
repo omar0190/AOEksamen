@@ -15,6 +15,17 @@ public class Employee {
     private String email;
     private int phoneNumber;
 
+    @OneToOne
+    @JoinColumn(name = "stilling_id")
+    private Position position;
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
 
     public int getID() {
         return ID;

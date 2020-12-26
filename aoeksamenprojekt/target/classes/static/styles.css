@@ -174,7 +174,6 @@ header{
 .hero{
     width: 100%;
     height: 100vh;
-    /*background: url("https://www.easyjobvikar.dk/wp-content/uploads/2018/02/vikar.jpg") center no-repeat;*/
     background: url("https://i.pinimg.com/originals/0d/1b/5c/0d1b5c9a33f8e9cb146385a1c6785e95.jpg") center no-repeat;
     background-size: cover;
     display: flex;

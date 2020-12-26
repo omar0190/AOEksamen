@@ -108,6 +108,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -126,6 +127,10 @@
 
                             <td>
                                 <a th:href="@{'/sletemp' + ${emp.ID}}" class="btn btn-danger">Slet</a>
+                            </td>
+
+                            <td>
+                                <a th:href="@{'/tildel' + ${emp.ID}}" class="btn btn-warning">Tildel ny stilling</a>
                             </td>
 
                         </tr>
