@@ -21,6 +21,25 @@ public class EmployeeController {
         this.positionServiceJPA = positionServiceJPA;
     }
 
+    @GetMapping("/bestilling")
+    public String bestilling(Model model) {
+        ArrayList<Employee> list = employeeServiceJPA.findAll();
+
+        System.out.println(list.get(0).getFirstName());
+
+        model.addAttribute("list", list);
+        return "Employee/order";
+
+    }
+
+    @GetMapping("/opretbestilling")
+    public String createOrder() {
+
+
+        return "Employee/orderform";
+    }
+
+
     @GetMapping("/vikar")
     public String ansatte(Model model) {
         ArrayList<Employee> list = employeeServiceJPA.findAll();

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--    <link th:href="@{background.css}" rel="stylesheet"/>-->
+    <!--    <link rel="stylesheet" href="../static/background.css">-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../static/styles.css">
+
+
+    <style>
+        .hero {
+            width: 100%;
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/3d/84/a2/3d84a293f6e70b793008c4080d117cbe.jpg') center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<header>
+
+
+    <div class="container">
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Virksomhed</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Book en tid</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Om Os</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+
+            </ul>
+
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+
+        </nav>
+
+
+    </div>
+
+
+
+</header>
+<!--Header ends-->
+
+
+<section class="hero" style="" id="hero">
+    <div class="container ">
+
+        <div class="trans">
+
+            <h1 class="headline">Bestil vikar</h1>
+            <div class="headline-description">
+                <div class="separation">
+                    <div class="line line-left"></div>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                    <div class="line line-right"></div>
+                </div>
+
+                <div class="single-animation">
+
+                    <div>
+                        <a href="/opretbestilling" class="btn cta-btn">Bestil</a>
+                    </div>
+
+                    <br>
+
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Navn</th>
+                            <th>Efternavn</th>
+                            <th>Stilling</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="emp : ${list}" style="color: white">
+
+
+                            <td th:text="${emp.firstName}"></td>
+                            <td th:text="${emp.lastName}"></td>
+                            <td>
+                                <a th:href="@{'/empprofile' + ${emp.ID}}" class="btn btn-primary">Info</a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--hero ends-->
+
+
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../../static/main.js"></script>
+
+</body>
+</html>
