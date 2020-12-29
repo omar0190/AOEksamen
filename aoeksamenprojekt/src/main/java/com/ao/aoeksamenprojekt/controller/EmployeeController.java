@@ -79,18 +79,7 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/kontaktmedarbejder")
-    public String contact(Model model) {
 
-        ArrayList<Employee> list = employeeServiceJPA.findAll();
-
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getFirstName());
-        }
-        model.addAttribute("list", list);
-
-        return "Employee/contact";
-    }
 
     @GetMapping("/empprofile{id}")
     public String empprofile(@PathVariable("id") int id, Model model) {
@@ -153,5 +142,7 @@ public class EmployeeController {
 
         return "redirect:/vikar";
     }
+
+
 
 }

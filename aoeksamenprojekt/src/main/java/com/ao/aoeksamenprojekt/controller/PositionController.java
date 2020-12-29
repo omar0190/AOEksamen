@@ -142,4 +142,12 @@ public class PositionController {
         return "Stillinger/detailsbruger";
     }
 
+    @GetMapping("søg")
+    public String apply(){
+
+
+        return "Stillinger/apply";
+    }
+
+
 }

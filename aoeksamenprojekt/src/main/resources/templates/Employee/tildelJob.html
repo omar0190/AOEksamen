@@ -28,43 +28,38 @@
 
 <header>
 
-
-    <div class="container">
-        <nav class="nav">
+    <div class="container-web">
+        <nav class="nav-web">
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/" class="nav-link active">Home</a>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+            <ul class="nav-list-web">
+                <li class="nav-item-web">
+                    <a href="/" class="nav-link-web active">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Virksomhed</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Virksomhed</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Book en tid</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Book en tid</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                <li class="nav-item-web">
+                    <a href="/stillinger" class="nav-link-web">Ledige Stillinger</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Om Os</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Om Os</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                <li class="nav-item-web">
+                    <a href="/kontakt" class="nav-link-web">Kontakt</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
+                <li class="nav-item-web">
+                    <a href="/login" class="nav-link-web">Login</a>
                 </li>
 
             </ul>
-
-            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
-
         </nav>
-
-
     </div>
 
 
@@ -78,7 +73,7 @@
     align-items: center;
     text-align: center;
 " id="hero">
-    <div class="container ">
+    <div class="container-web">
 
         <div class="trans">
 
@@ -110,7 +105,7 @@
                             <option th:each="stilling : ${stillinger}" th:value="${stilling.ID}" th:text="${stilling.title}"></option>
                         </select>
 
-                        <button type="submit" class="btn cta-btn">Tildel ny stilling</button>
+                        <button type="submit" class="btn cta-btn">Indtast ny stilling</button>
 
                     </form>
 

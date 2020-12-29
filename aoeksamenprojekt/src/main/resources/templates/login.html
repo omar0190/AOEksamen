@@ -1,27 +1,31 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}"lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}" lang="en">
 <head>
 
+    <title>Login</title>
+
     <meta charset="UTF-8">
-    <title>Login - EasyJob</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vikar rekruttering">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Easyjob">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-<!--    CSS-->
+    <!--    CSS-->
     <link href="../static/login.css" rel="stylesheet"/>
     <link th:href="@{login.css}" rel="stylesheet"/>
 
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
 
-<!--    JavaScript-->
-    <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
-    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
 
 </head>
@@ -29,12 +33,39 @@
 
 <header>
 
+    <div class="container-web">
+        <nav class="nav-web">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}"
+                                          alt="logo"></a>
+            <ul class="nav-list-web">
+                <li class="nav-item-web">
+                    <a href="/" class="nav-link-web">Home</a>
+                </li>
+
+                <li class="nav-item-web">
+                    <a href="/kontakt" class="nav-link-web">Kontakt</a>
+                </li>
+
+                <li class="nav-item-web">
+                    <a href="/login" class="nav-link-web active">Login</a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </div>
+
+
 </header>
 
-<div>
-    <div id="p" class="sign-up-form">
+<div class="hero">
+    <div id="p" class="sign-up-form trans">
         <h1>Login</h1>
-        <form  th:action="@{/login}" method="post">
+        <form th:action="@{/login}" method="post">
             <div th:if="${param.error}">
                 <div class="alert alert-danger">
                     Fejl: Forkerte legitimationsoplysninger (Loginoplysninger)
@@ -42,9 +73,10 @@
             </div>
 
 
-
-            <input class="input-box" type="text" id="username" name="username" placeholder="Username" autofocus="autofocus">
-            <input class="input-box" type="password" id="password" name="password" placeholder="Password" autofocus="autofocus">
+            <input class="input-box" type="text" id="username" name="username" placeholder="Username"
+                   autofocus="autofocus">
+            <input class="input-box" type="password" id="password" name="password" placeholder="Password"
+                   autofocus="autofocus">
             <div>
                 <form id="Sign">
                     <div>
@@ -58,16 +90,9 @@
     </div>
 </div>
 
+<script type="text/javascript" rel="script" th:src="@{main.js}"></script>
+<script type="text/javascript" rel="script" src="../static/main.js"></script>
 
-<footer>
-    <br/>
-    <br/>
-    <div class="container">
-        <hr/>
-        <p>© 2020 - HSM</p>
-    </div>
-
-</footer>
 
 <script>
     isJqueryWorking();
