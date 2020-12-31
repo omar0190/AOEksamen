@@ -1,6 +1,8 @@
 package com.ao.aoeksamenprojekt.controller;
 
 
+import com.ao.aoeksamenprojekt.auth.User;
+import com.ao.aoeksamenprojekt.auth.UserService;
 import com.ao.aoeksamenprojekt.model.Employee;
 import com.ao.aoeksamenprojekt.service.position.EmployeeServiceJPA;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,13 @@ public class LoginController  {
 
 
     private EmployeeServiceJPA employeeServiceJPA;
+    private UserService userService;
 
-    public LoginController(EmployeeServiceJPA employeeServiceJPA) {
+    public LoginController(EmployeeServiceJPA employeeServiceJPA, UserService userService) {
         this.employeeServiceJPA = employeeServiceJPA;
+        this.userService = userService;
     }
+
 
     @GetMapping("/login")
     public String login() {
@@ -29,13 +34,13 @@ public class LoginController  {
     }
 
 
-   @PostMapping("signed")
-   public String signed(Employee employee){
+   @PostMapping("/signed")
+   public String signed(User user){
 
        // vi sætter nu objektet i databasen
-       employeeServiceJPA.save(employee);
+       userService.create(user);
        System.out.println("Employee created");
 
-        return "redirect:/signup";
+        return "redirect:/login";
    }
 }

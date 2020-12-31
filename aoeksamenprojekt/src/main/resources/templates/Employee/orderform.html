@@ -29,45 +29,39 @@
 
 <header>
 
-
-    <div class="container">
-        <nav class="nav">
+    <div class="container-web">
+        <nav class="nav-web">
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/" class="nav-link active">Home</a>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+            <ul class="nav-list-web">
+                <li class="nav-item-web">
+                    <a href="/" class="nav-link-web active">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Virksomhed</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Virksomhed</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Book en tid</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Book en tid</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                <li class="nav-item-web">
+                    <a href="/stillinger" class="nav-link-web">Ledige Stillinger</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Om Os</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Om Os</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                <li class="nav-item-web">
+                    <a href="/kontakt" class="nav-link-web">Kontakt</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
+                <li class="nav-item-web">
+                    <a href="/login" class="nav-link-web">Login</a>
                 </li>
 
             </ul>
-
-            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
-
         </nav>
-
-
     </div>
-
 
 
 </header>
@@ -92,39 +86,7 @@
                     <div class="line line-right"></div>
                 </div>
                 <div class="single-animation">
-                    <form action="https://formspree.io/f/xgeppndd" method="post">
 
-                        <br>
-
-                        <div class="form-group">
-                            <label for="virksomhed">Virksomhed</label>
-                            <input type="text" name="Virksomhed" id="virksomhed" placeholder="Navnet på din virksomhed" class="form-control" required ><br>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="empName">Navn på Vikar</label>
-                            <input type="text" name="EmplName" id="empName" placeholder="Navn på vikar" class="form-control" required ></br>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tlf">Telefon</label>
-                            <input type="text" name="phoneNumber" id="tlf" placeholder="Telefonnummer" class="form-control" required ></br>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mail">Email</label>
-                            <input type="text" name="email" id="mail" placeholder="Email" class="form-control" required ></br>
-                        </div>
-
-                        <div class="input-container textarea">
-                            <textarea id="besked" name="besked" placeholder="Besked..." class="form-control" cols="50" rows="10" required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn cta-btn" name="save">Send</button>
-                        </div>
-
-                    </form>
 
                 </div>
 
@@ -134,6 +96,113 @@
     </div>
 </section>
 <!--hero ends-->
+
+
+
+<section class="discover-our-story">
+    <div class="container-web">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="container-web">
+
+                    <div class="trans">
+
+                        <div class="headline-description">
+
+                            <div class="single-animation">
+                                <form action="https://formspree.io/f/xgeppndd" method="post">
+
+                                    <br>
+
+                                    <div class="form-group">
+                                        <label for="virksomhed">Virksomhed</label>
+                                        <input type="text" name="Virksomhed" id="virksomhed" placeholder="Navnet på din virksomhed" class="form-control" required ><br>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="empName">Navn på Vikar</label>
+                                        <input type="text" name="EmplName" id="empName" placeholder="Navn på vikar" class="form-control" required ></br>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tlf">Telefon</label>
+                                        <input type="text" name="phoneNumber" id="tlf" placeholder="Telefonnummer" class="form-control" required ></br>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mail">Email</label>
+                                        <input type="text" name="email" id="mail" placeholder="Email" class="form-control" required ></br>
+                                    </div>
+
+                                    <div class="input-container textarea">
+                                        <textarea id="besked" name="besked" placeholder="Besked..." class="form-control" cols="50" rows="10" required></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn cta-btn" name="save">Send</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Discover our story ends here-->
+
+<footer>
+    <div class="container-web">
+        <div class="back-to-top">
+            <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-content-about animate-top">
+                <h4>Om EasyJob</h4>
+                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <p>
+                    Easyjob arbejder for at skabe det perfekte match mellem vores vikarer og kunder.
+                    Vi anser det for vores vigtigste spidskompetence at finde og levere den arbejdskraft,
+                    der 100 % afspejler kundens ønsker.
+                </p>
+            </div>
+            <div class="footer-content-divider animate-bottom">
+                <div class="social-media">
+                    <h4>Følg os på</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/EasyjobRekruttering/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsletter-container">
+                    <h4>Bliv kontaktet</h4>
+                    <form action="" class="newsletter-form">
+                        <input type="text" class="newsletter-input" placeholder="Email...">
+                        <button class="newsletter-btn" type="submit">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
 <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
 <script type="text/javascript" rel="script" src="../static/main.js"></script>

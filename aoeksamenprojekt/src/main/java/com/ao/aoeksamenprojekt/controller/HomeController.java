@@ -17,6 +17,11 @@ public class HomeController {
        return "index";
     }
 
+    @GetMapping ("/admin")
+    public String index1() {
+        return "indexlogin";
+    }
+
 
 
 

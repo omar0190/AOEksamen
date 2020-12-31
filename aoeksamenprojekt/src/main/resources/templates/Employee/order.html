@@ -34,45 +34,50 @@
 
 <header>
 
-
-    <div class="container">
-        <nav class="nav">
+    <div class="container-web">
+        <nav class="nav-web">
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/" class="nav-link active">Home</a>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+            <ul class="nav-list-web">
+                <li class="nav-item-web">
+                    <a href="/" class="nav-link-web active">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Virksomhed</a>
+                <li class="nav-item-web">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Virksomhed
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/vikar">Alle Vikar</a>
+                            <a class="dropdown-item" href="/opretvikar">Opret Vikar</a>
+                            <a class="dropdown-item" href="/allestillinger">Alle Stillinger</a>
+                            <a class="dropdown-item" href="/opretstilling">Opret Stillinger</a>
+                            <a class="dropdown-item" href="/bestilling">Alle bestillinger</a>
+                        </div>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Book en tid</a>
+                <li class="nav-item-web">
+                    <a href="/opretbestilling" class="nav-link-web">Book en vikar</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/stillinger" class="nav-link">Ledige Stillinger</a>
+                <li class="nav-item-web">
+                    <a href="/stillinger" class="nav-link-web">Ledige Stillinger</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Om Os</a>
+                <li class="nav-item-web">
+                    <a href="#" class="nav-link-web">Om Os</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                <li class="nav-item-web">
+                    <a href="/kontakt" class="nav-link-web">Kontakt</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
+                <li class="nav-item-web">
+                    <a href="/login" class="nav-link-web">Login</a>
                 </li>
 
             </ul>
-
-            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
-
         </nav>
-
-
     </div>
-
 
 
 </header>
@@ -84,7 +89,7 @@
 
         <div class="trans">
 
-            <h1 class="headline">Bestil vikar</h1>
+            <h1 class="headline">Bestilt vikar</h1>
             <div class="headline-description">
                 <div class="separation">
                     <div class="line line-left"></div>
@@ -93,40 +98,6 @@
                 </div>
 
                 <div class="single-animation">
-
-                    <div>
-                        <a href="/opretbestilling" class="btn cta-btn">Bestil</a>
-                    </div>
-
-                    <br>
-
-                    <table class="table">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>Navn</th>
-                            <th>Efternavn</th>
-                            <th>Stilling</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="emp : ${list}" style="color: white">
-
-
-                            <td th:text="${emp.firstName}"></td>
-                            <td th:text="${emp.lastName}"></td>
-                            <td>
-                                <a th:href="@{'/empprofile' + ${emp.ID}}" class="btn btn-primary">Info</a>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-
-                        </tbody>
-                    </table>
 
 
 
@@ -138,8 +109,131 @@
 <!--hero ends-->
 
 
+
+<section class="discover-our-story">
+    <div class="container-web">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="container-web">
+
+                    <div class="trans">
+
+                        <div class="headline-description">
+
+                            <div class="single-animation">
+
+                                <div>
+                                    <a href="/opretbestilling" class="btn cta-btn">Bestil</a>
+                                </div>
+
+                                <br>
+
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th>Navn</th>
+                                        <th>Efternavn</th>
+                                        <th>Stilling</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="emp : ${list}" style="color: white">
+
+
+                                        <td th:text="${emp.firstName}"></td>
+                                        <td th:text="${emp.lastName}"></td>
+                                        <td>
+                                            <a th:href="@{'/empprofile' + ${emp.ID}}" class="btn btn-primary">Info</a>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Discover our story ends here-->
+
+
+<footer>
+    <div class="container-web">
+        <div class="back-to-top">
+            <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-content-about animate-top">
+                <h4>Om EasyJob</h4>
+                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <p>
+                    Easyjob arbejder for at skabe det perfekte match mellem vores vikarer og kunder.
+                    Vi anser det for vores vigtigste spidskompetence at finde og levere den arbejdskraft,
+                    der 100 % afspejler kundens ønsker.
+                </p>
+            </div>
+            <div class="footer-content-divider animate-bottom">
+                <div class="social-media">
+                    <h4>Følg os på</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/EasyjobRekruttering/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsletter-container">
+                    <h4>Bliv kontaktet</h4>
+                    <form action="" class="newsletter-form">
+                        <input type="text" class="newsletter-input" placeholder="Email...">
+                        <button class="newsletter-btn" type="submit">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
 <script type="text/javascript" rel="script" src="../../static/main.js"></script>
+
+
+<!--til boostrap-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 </body>
 </html>

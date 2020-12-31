@@ -19,26 +19,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-<!--    fonts-->
+    <!--    fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
     <!--    JS-->
     <script type="text/javascript" rel="script" th:src="@{ajax.js}"></script>
     <!--    <script type="text/javascript" rel="script" src="../static/ajax.js"></script>-->
 
-<!--    <script type="text/javascript" rel="script" th:src="@{main.js}"></script>-->
-<!--    <script type="text/javascript" rel="script" src="../static/main.js"></script>-->
+    <!--    <script type="text/javascript" rel="script" th:src="@{main.js}"></script>-->
+    <!--    <script type="text/javascript" rel="script" src="../static/main.js"></script>-->
 
 
-<!--    Css-->
+    <!--    Css-->
 
     <link th:href="@{styles.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/styles.css">
 
     <style>
-        .hero{
+        .hero {
             width: 100%;
-            height: 100vh; background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;  background-size: cover;
+            height: 100vh;
+            background: url('https://wallpaperaccess.com/full/632198.jpg') center no-repeat;
+            background-size: cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -49,7 +51,6 @@
 <body>
 
 
-
 <header>
 
     <div class="container-web">
@@ -58,16 +59,29 @@
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-times"></i>
             </div>
-            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}" alt="logo"></a>
+            <a href="/" class="logo"><img th:src="@{https://www.easyjobvikar.dk/wp-content/uploads/2018/02/easyjob.png}"
+                                          alt="logo"></a>
             <ul class="nav-list-web">
                 <li class="nav-item-web">
                     <a href="/" class="nav-link-web active">Home</a>
                 </li>
                 <li class="nav-item-web">
-                    <a href="#" class="nav-link-web">Virksomhed</a>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Virksomhed
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/vikar">Alle Vikar</a>
+                            <a class="dropdown-item" href="/opretvikar">Opret Vikar</a>
+                            <a class="dropdown-item" href="/allestillinger">Alle Stillinger</a>
+                            <a class="dropdown-item" href="/opretstilling">Opret Stillinger</a>
+                            <a class="dropdown-item" href="/bestilling">Alle bestillinger</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item-web">
-                    <a href="#" class="nav-link-web">Book en tid</a>
+                    <a href="/opretbestilling" class="nav-link-web">Book en vikar</a>
                 </li>
                 <li class="nav-item-web">
                     <a href="/stillinger" class="nav-link-web">Ledige Stillinger</a>
@@ -108,41 +122,9 @@
 
                 <div class="single-animation">
 
-                    <div>                    <a href="/opretstilling" class="btn cta-btn">Opret en stilling</a>
+                    <div>
+                        <a href="/opretstilling" class="btn cta-btn">Opret en stilling</a>
                     </div>
-
-                    <br>
-
-                    <table class="table">
-
-                <thead class="thead-dark">
-
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-                <tr th:each="stilling : ${list}" style="color: white">
-                    <th th:text="${stilling.ID}"></th>
-                    <td th:text="${stilling.title}"></td>
-                    <td>
-                        <a th:href="@{'/stillinginfo' + ${stilling.ID}}" class="btn btn-primary">Info</a>
-                    </td>
-                    <td>
-                        <a th:href="@{'/redigererstillinger' + ${stilling.ID}}" class="btn btn-success">Rediger</a>
-                    </td>
-<!--                    <td><a th:href="@{'/sletstillinger' + ${stilling.ID}}" class="btn btn-danger">Slet</a>-->
-<!--                    </td>-->
-                </tr>
-                </tbody>
-            </table>
-
 
 
                 </div>
@@ -152,6 +134,116 @@
 </section>
 <!--hero ends-->
 
+
+<section class="discover-our-story">
+    <div class="container-web">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="container-web">
+
+                    <div class="trans">
+
+                        <div class="headline-description">
+
+                            <div class="single-animation">
+
+
+                                <br>
+                                <div class="table-responsive">
+                                    <table class="table">
+
+                                        <thead class="thead-dark">
+
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                        </tr>
+
+                                        </thead>
+
+                                        <tbody>
+                                        <tr th:each="stilling : ${list}" style="color: white">
+                                            <th th:text="${stilling.ID}"></th>
+                                            <td th:text="${stilling.title}"></td>
+                                            <td>
+                                                <a th:href="@{'/stillinginfo' + ${stilling.ID}}" class="btn btn-primary">Info</a>
+                                            </td>
+                                            <td>
+                                                <a th:href="@{'/redigererstillinger' + ${stilling.ID}}"
+                                                   class="btn btn-success">Rediger</a>
+                                            </td>
+                                            <!--                    <td><a th:href="@{'/sletstillinger' + ${stilling.ID}}" class="btn btn-danger">Slet</a>-->
+                                            <!--                    </td>-->
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Discover our story ends here-->
+
+
+<footer>
+    <div class="container-web">
+        <div class="back-to-top">
+            <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-content-about animate-top">
+                <h4>Om EasyJob</h4>
+                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <p>
+                    Easyjob arbejder for at skabe det perfekte match mellem vores vikarer og kunder.
+                    Vi anser det for vores vigtigste spidskompetence at finde og levere den arbejdskraft,
+                    der 100 % afspejler kundens ønsker.
+                </p>
+            </div>
+            <div class="footer-content-divider animate-bottom">
+                <div class="social-media">
+                    <h4>Følg os på</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/EasyjobRekruttering/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsletter-container">
+                    <h4>Bliv kontaktet</h4>
+                    <form action="" class="newsletter-form">
+                        <input type="text" class="newsletter-input" placeholder="Email...">
+                        <button class="newsletter-btn" type="submit">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 <script type="text/javascript" rel="script" th:src="@{main.js}"></script>
 <script type="text/javascript" rel="script" src="../static/main.js"></script>
 
@@ -160,6 +252,20 @@
     // isjQuery();
     // preventdelete($("#slet"));
 </script>
+
+
+<!--til boostrap-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 </body>
 </html>
