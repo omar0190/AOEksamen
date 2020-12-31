@@ -74,6 +74,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .antMatchers("/stillinginfo19").permitAll()
                 .antMatchers("/stillinginfo20").permitAll()
 
+                .antMatchers("/søg").permitAll()
                 .antMatchers("/opretbestilling").permitAll()
                 .antMatchers("/kontakt").permitAll()
                 .antMatchers("/signup").permitAll()
