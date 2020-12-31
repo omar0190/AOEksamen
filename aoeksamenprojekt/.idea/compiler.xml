@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="aoeksamenprojekt" target="11" />
+      <module name="aoeksamenprojekt" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
