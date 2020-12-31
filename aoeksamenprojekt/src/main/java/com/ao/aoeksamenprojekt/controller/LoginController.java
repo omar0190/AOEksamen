@@ -3,7 +3,6 @@ package com.ao.aoeksamenprojekt.controller;
 
 import com.ao.aoeksamenprojekt.auth.User;
 import com.ao.aoeksamenprojekt.auth.UserService;
-import com.ao.aoeksamenprojekt.model.Employee;
 import com.ao.aoeksamenprojekt.service.position.EmployeeServiceJPA;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
